@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script type="text/javascript" src="./scripts/caleandar.min.js"></script>
+    <link rel="stylesheet" href="./styles/caleandar-style.css">
+
+    <script type="text/javascript" src="./scripts/fullcalendar-6.1.10/dist/index.global.min.js"></script>
+
+    <title>Calendars</title>
+</head>
+<body>
+    <h1>Caleandar</h1>
+    <div id="caleandar"></div>
+    <hr />
+    <h1>FullCalendar</h1>
+    <div id="fullcalendar"></div>
+    <hr />
+    <h1>FullCalendarJustBundle</h1>
+    <div id="fullcalendarjustbundle"></div>
+    <script>
+        var element = document.getElementById("caleandar")
+        var events = [{'Date': new Date(2024, 05, 15), 'Title': 'caelendar test', 'Link': function () { alert("event") } }]
+        var settings = []
+        caleandar(element, events, settings)
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var calendarEl = document.getElementById("fullcalendar")
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+            })
+            calendar.render()
+        })
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var calendarEl = document.getElementById("fullcalendarjustbundle")
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+            })
+            calendar.render()
+        })
+    </script>
+</body>
+</html>
